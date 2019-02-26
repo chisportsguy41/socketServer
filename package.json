@@ -1,0 +1,14 @@
+{
+  "name": "socket-server",
+  "version": "1.0.0",
+  "description": "socket for ionic app",
+  "main": "index.js",
+  "scripts": {
+    "test": "test_socket"
+  },
+  "author": "caleb",
+  "dependencies": {
+    "express": "^4.16.4",
+    "socket.io": "^2.2.0"
+  }
+}
