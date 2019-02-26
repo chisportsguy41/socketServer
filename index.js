@@ -41,8 +41,10 @@ io.on('connection', (socket) => {
       }
     }
     console.log(names);
-    socket.broadcast.emit('status-changed', {event: 'started', user: socket.nickname, text: 'started the game'});
-    io.emit('status-changed', {event: 'set-players', list: names});
+    console.log(message.deck);
+    socket.broadcast.emit('status-changed', 
+      {event: 'started', user: socket.nickname, text: 'started the game'});
+    io.emit('status-changed', {event: 'set-players', list: names, deck: message.deck});
   });
 
   socket.on('reset', (message) => {
@@ -56,7 +58,7 @@ io.on('connection', (socket) => {
     }
     console.log(names);
     io.emit('status-changed', {event: 'reset', user: socket.nickname, text: 'reset the game'});
-    io.emit('status-changed', {event: 'set-players', list: names});
+    io.emit('status-changed', {event: 'set-players', list: names, deck: message.deck});
   });
 });
  
